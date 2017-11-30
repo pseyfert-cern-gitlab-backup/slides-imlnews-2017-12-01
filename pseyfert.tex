@@ -118,7 +118,7 @@ breaklines=true,breakautoindent=true}
   \hbox{%
     \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
       \usebeamerfont{author in head/foot}\vtop{\vskip-2.25ex\hbox{\resizebox{!}{3.25ex}{\usebox{\pilogo}}}}%
-      \hfill \insertshortauthor~~(\insertshortinstitute) \hfill%
+      \hfill \insertshortauthor~~\insertshortinstitute \hfill%
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
       \usebeamerfont{title in head/foot}\insertshorttitle%
@@ -157,62 +157,119 @@ breaklines=true,breakautoindent=true}
 \newcommand{\arxiv}[1]{{\color{gray}\tiny$[$\href{http://arxiv.org/abs/#1}{arXiv:#1}$]$}}
 \newcommand{\jref}[2]{{\color{gray}\tiny$[$\href{#2}{#1}$]$}}
 \newcommand{\myhref}[2]{\href{#1}{\footnotesize{\textcolor{blue}{\texttt{#2}}}}}
+\newcommand{\openref}[1]{\href{#1}{\footnotesize{\textcolor{blue}{\texttt{#1}}}}}
 
 
-\author[Paul]{Paul Seyfert}
+\author[~]{Lorenzo~Moneta~(CERN)\and Markus~Stoye~(CERN)\and Michele~Floris~(CERN)\and Paul~Seyfert~(CERN)\and Sergei~Gleyzer~(University~of~Florida)\and Steven~Randolph~Schramm~(Université~de~Genève)}
 \institute[CERN]{}
 \date[\today]{}
-\title{\myhref{https://github.com/pseyfert/tmva-branch-adder}{tmva-branch-adder}}
+\title{IML meeting -- NEWS}
 
 
 \begin{document}
 \maketitle
 
-\section{introduction}
-\subsection{introduction}
-%\begin{frame}[fragile]{introduction}
-\begin{frame}{introduction}
-\begin{itemize}
-\item optimising code is sometimes considered a black art
-%\begin{lstlisting}
-%// branchless implementation of min/max for unsigned
-%static inline unsigned min(unsigned a, unsigned b) noexcept
-%{
-%    const unsigned mask = -(a < b);
-%    return (a \& mask) | (b \& ~mask);
-%}
-%static inline unsigned max(unsigned a, unsigned b) noexcept
-%{
-%    const unsigned mask = -(a > b);
-%    return (a \& mask) | (b \& ~mask);
-%}
-%\end{lstlisting}
-\item true to some extent -- occasionally, you need the odd dirty trick
-\item but most of the time, it's down to:
-\end{itemize}
-\end{frame}
 \begin{frame}
-  \frametitle{conclusion}
-  
+  \frametitle{Announcements}
+
   \begin{itemize}
-      \item headache ahead
+    \item Deep Learning for Physical Sciences workshop at NIPS
+      \newline December 8, 2017, Long Beach (USA)
+      \newline \openref{https://dl4physicalsciences.github.io/}
+    \item next EP-IT data science seminar by  Conor Fitzpatrick (EPFL)
+      \newline ``Too much of a good thing:\newline How to trigger in a signal-rich environment''
+      \newline  Wednesday 13 Dec 2017, 11:00
+      \newline \openref{https://indico.cern.ch/event/675056/}
+    \item next IML meeting
+      \newline Friday 26 Jan 2018, 222-R-001 (Filtration plant)
+      \newline open topic, aiming for:
+      \begin{itemize}
+          \item followup on today's meeting
+          \item news/summary from NIPS
+          \item tools and software updates
+          \item $<$your project here$>$
+      \end{itemize}
+      \openref{https://indico.cern.ch/event/679765/}
   \end{itemize}
-
-  \vspace{.3\textheight}
-
-  \footnotesize{slides (excl.\ cern logo) will appear on}
-
-
-  \myhref{https://gitlab.cern.ch/pseyfert/slides-imlnews-2017-12-01}{https://gitlab.cern.ch/pseyfert/slides-imlnews-2017-12-01}\includegraphics[width=.2\textwidth]{./QR2.png}
 \end{frame}
+
+\begin{frame}
+  \frametitle{2018 IML workshop}
+  \begin{itemize}
+      \item plans getting more and more concret
+        \newline ``core workshop'' 9th April -- 11th April
+        \newline $\checkmark$ rooms booked
+      \item similar to last time: physics sessions
+        \newline topics: deep learning, tagging, regression, generative models
+      \item new: hackathon 12th April (one day)
+        \newline reduced number of participants!
+        \newline please think about projects you'd want to attack
+      \item different than last time: challenge
+        \newline will start before the workshop (to run $\sim$ one month)
+        \newline more details in 2018
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{today's topic: common benchmark dataset}
+  \begin{columns}
+    \begin{column}{.35\textwidth}
+      \includegraphics[width=\textwidth]{./mnist.png}
+    \end{column}
+    \begin{column}{.65\textwidth}
+      what we want:
+      \begin{itemize}
+        \item a ML benchmark
+        \item should be HEP specific
+        \item common among experiments
+        \item $\rightarrow$ able to compare two methods by looking up their benchmark
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{block}{today's focus: technical challenges}
+    \begin{itemize}
+        \item make data accessible
+        \item size, formats, \dots
+        \item citing data
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Agenda}
+  \includegraphics[width=.8\textwidth]{./agenda.png}
+\end{frame}
+
+\setbeamertemplate{background canvas}{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{banner.pdf}%
+}   
+\begin{frame}[t]
+  \visible<2>{
+    {~}
+    \vspace{.5\textheight}
+    \begin{columns}
+      \begin{column}{.8\textwidth}
+      \end{column}
+      \begin{column}{.2\textwidth}
+        \begin{block}{}
+          \myhref{https://gitlab.cern.ch/pseyfert/slides-imlnews-2017-12-01}{sources for the slides}
+
+          \includegraphics[width=.9\textwidth]{./QR2.png}
+        \end{block}
+      \end{column}
+      \end{columns}
+    }
+\end{frame}
+  \beamertemplateshadingbackground{Black!03}{White}
+
 
 \appendix
 
-\begin{frame}
-  \frametitle{BACKUP}
-  backup is for people who can't improvise
-
-  (yes, that's a cheap excuse for not preparing backup slides)
-\end{frame}
+%\begin{frame}
+%  \frametitle{BACKUP}
+%  backup is for people who can't improvise
+%
+%  (yes, that's a cheap excuse for not preparing backup slides)
+%\end{frame}
 
 \end{document}
