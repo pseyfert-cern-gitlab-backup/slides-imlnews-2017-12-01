@@ -13,6 +13,18 @@ probably are slides LHCb-TALK-20xx-xxx, papers LHCb-PAPER-20xx-xxx
 LHCb-DP-20xx-xxx, and public notes LHCb-PUB-20xx-xxx, are published under the
 CC-BY-4.0 license.  To be sure, look up the original material.
 
+# fonts
+
+This time, I experimented with fonts and included the [Monoid
+font](http://www.1001fonts.com/monoid-font.html) and the [Hack
+font](http://www.1001fonts.com/hack-font.html).
+
+The former is licensed under the [MIT and OFL
+licenses](https://github.com/larsenwork/monoid#license).
+
+The latter is licensed under the [MIT and bitstream vera
+licenses](https://github.com/source-foundry/Hack/blob/master/LICENSE.md).
+
 # double licensing and material not yet covered
 
 The slides are furthermore double licensed under [CC-BY-SA-4.0](CC-BY-SA.txt).
